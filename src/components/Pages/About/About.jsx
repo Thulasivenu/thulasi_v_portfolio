@@ -11,7 +11,7 @@ const About = () => {
         {/* <span className="corner top-right"></span> */}
         {/* <span className="corner bottom-left"></span> */}
         {/* <span className="corner bottom-right"></span> */}
-        <h2 className="mobileView">About</h2>
+        {/* <h2 className="mobileView">About</h2> */}
         <div className="backgroundGradient">
           <div className="workexperience">
             <h2 className="headingss">
