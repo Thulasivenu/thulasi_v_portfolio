@@ -1,0 +1,80 @@
+.projectContainer {
+  padding: 0px 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: fadeInCenter 0.5s ease forwards;
+
+  width: 100%;
+  max-width: 1200px;
+  /* border: 1px solid red; */
+  max-width: none; /* override any earlier max-width */
+  margin: 0; /* flush to edges (or use auto for centering if parent is narrower) */
+  padding: 2rem; /* optional breathing room */
+  box-sizing: border-box;
+}
+
+
+@keyframes fadeInCenter {
+    from {
+      opacity: 0;
+      transform: translate(-50%, -50%) translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, -50%) translateY(0);
+    }
+  }
+
+.projectsContent {
+  /* display: flex; */
+  display: grid;
+  width: 100%; /* ensure grid spans full .projects width */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.techUsedProject {
+  display: flex;
+}
+
+.projectInfo {
+  background-image: linear-gradient(120deg, #fdfbfb 0%, #fdfdfd 200%);
+}
+
+.projectInfo ul li {
+  /* background-color: red; */
+  line-height: 1.5rem;
+}
+
+.techUsedProject p {
+  position: relative;
+  padding: 0.2rem 0.5rem;
+  margin: 0rem 0.5rem 0rem 0rem;
+  font-size: 0.9em;
+  color: #8b008b;
+  border: 1.5px solid transparent; /* transparent border */
+  border-radius: 25px;
+  background: linear-gradient(white, white) padding-box,
+    /* white inside */ linear-gradient(45deg, orange, magenta, purple)
+      border-box; /* colorful border */
+  text-align: center;
+  white-space: nowrap;
+  font-weight: 500;
+}
+
+.headings {
+  font-weight: bold;
+  color: #333333;
+  font-size: 1.2em;
+  padding: 0rem 0.5rem;
+  /* margin: 0.5rem; */
+  /* border-radius: 25px; */
+  /* background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%); */
+
+  /* background: 
+      linear-gradient(white, white) padding-box,  /* inner background (white) */
+  /* linear-gradient(45deg, orange, magenta, purple) border-box; border gradient */
+  border-left: 4px solid transparent; /* important: border itself is transparent */
+}

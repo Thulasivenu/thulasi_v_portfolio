@@ -1,0 +1,165 @@
+.navContainer {
+  display: flex;
+  justify-content: space-between;
+  /* box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px; */
+  /* border: 2px solid red; */
+  align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  /* padding: 10px 20px; */
+  left: 0;
+  z-index: 1000;
+  height: 65px;
+  background-image: linear-gradient(120deg, #fdfbfb 0%, #fdfdfd 200%);
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.navLinks {
+  padding: 2em;
+}
+.navLinks ul {
+  display: flex;
+  gap: 1rem;
+  padding: 0 2em;
+  margin: 0;
+}
+
+.navLinks li {
+  list-style: none;
+}
+
+.navLinks a {
+  position: relative;
+  text-decoration: none;
+  font-size: 1em;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #333;
+  padding-bottom: 4px; /* space for the underline */
+  transition: color 0.2s;
+}
+
+/* 🔧 Give ::after a transition on width only */
+.navLinks a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    orange,
+    magenta,
+    purple,
+    orange,
+    magenta,
+    purple
+  );
+}
+
+.navLinks a:hover::after {
+  width: 100%;
+  transition: width 0.3s ease;
+}
+
+/* Active link: keep it fully underlined */
+.navLinks a.active::after {
+  width: 100%;
+}
+
+/* optional: change text color when active/hovered */
+
+.myProfile {
+  padding: 2em;
+}
+
+.myProfile .profileIcon {
+  border-radius: 50%;
+  padding: 0.8rem;
+  font-size: 1.4em;
+  font-weight: bold;
+  margin-right: 0.5rem;
+  color: white;
+  background-image: linear-gradient(to top, #f77062 0%, #fe5196 100%);
+}
+.myProfile .profileName {
+  font-size: 1.2em;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #8B008B;
+}
+
+.hamBurger {
+  display: none;
+  background: none; border: none;
+  cursor: pointer;
+}
+
+.modalPopup{
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);  /* Dark overlay */
+  z-index: 999;  /* Overlay is beneath the content */
+}
+
+
+
+
+
+
+.modalPopup .modalContent {
+  position: relative;
+  background-color: white;
+  padding: 20px;
+  margin: auto;
+  width: 50%;
+  max-width: 400px;
+  border-radius: 8px;
+  z-index: 1000;
+}
+
+.modalPopup.open {
+  display: block; /* Show modal */
+}
+
+/* responsive design */
+@media (max-width: 768px) {
+  .hamBurger {
+    display: block;  /* show hamburger */
+  }
+  .navLinks {
+    position: absolute;
+    top: 65px;  /* just below the navbar */
+    right: 0;
+    background: #fff;
+    width: 200px;
+    transform: translateX(100%);  /* hide off-screen */
+    transition: transform 0.3s ease;
+  }
+  .navLinks.open {
+    transform: translateX(0);  /* slide in */
+  }
+  .navLinks ul {
+    flex-direction: column;
+    padding: 1rem 0;
+  }
+  .navLinks li {
+    margin: 0.5rem 1rem;
+  }
+  .hamBurger img {
+    width: 30px;
+    height: auto;
+  }
+
+  .profileName {
+    display: none;
+  }
+}
+
+

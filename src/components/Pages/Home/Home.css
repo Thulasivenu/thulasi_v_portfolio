@@ -1,0 +1,217 @@
+.homeContainer {
+  width: 80%;
+  max-width: 800px;
+  /* border: 1px solid black; */
+  padding: 60px 30px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: fadeInCenter 0.5s ease forwards;
+
+}
+
+
+@keyframes fadeInCenter {
+    from {
+      opacity: 0;
+      transform: translate(-50%, -50%) translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, -50%) translateY(0);
+    }
+  }
+  .fadeInUp {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+  
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .gradientText {
+    background: linear-gradient(90deg, orange, magenta, purple);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientShift 3s ease infinite;
+  }
+  
+  @keyframes gradientShift {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+
+
+.welcome {
+  font-size: 4vw; /* Adjusts dynamically with screen size */
+}
+
+.objective {
+  border-left: 5px solid grey;
+  padding: 0 0.5rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  margin-top: 20px; /* Adds spacing between objective and other content */
+}
+
+/* * common corner‐bar styles */
+*/ .corner {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+}
+.corner::before,
+.corner::after {
+  content: "";
+  position: absolute;
+  /* your gradient—adjust colors as desired */
+  background: linear-gradient(45deg, orange, magenta, purple);
+}
+
+/* ── Top-Left ── */
+.top-left::before {
+  /* horizontal bar */
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 5px;
+  border-top-left-radius: 5px;
+}
+.top-left::after {
+  /* vertical bar */
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100px;
+  border-top-left-radius: 5px;
+}
+
+/* ── Top-Right ── */
+.top-right {
+  top: 0;
+  right: 0;
+}
+.top-right::before {
+  /* horizontal bar (reversed gradient direction) */
+  top: 0;
+  right: 0;
+  width: 100px;
+  height: 5px;
+  background: linear-gradient(135deg, orange, magenta, purple);
+  border-top-right-radius: 5px;
+}
+.top-right::after {
+  /* vertical bar */
+  top: 0;
+  right: 0;
+  width: 5px;
+  height: 100px;
+  background: linear-gradient(45deg, orange, magenta, purple);
+  border-top-right-radius: 5px;
+}
+
+/* ── Bottom-Left ── */
+.bottom-left {
+  bottom: 0;
+  left: 0;
+}
+.bottom-left::before {
+  /* horizontal bar */
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 5px;
+  background: linear-gradient(315deg, orange, magenta, purple);
+  border-bottom-left-radius: 5px;
+}
+.bottom-left::after {
+  /* vertical bar (upwards) */
+  bottom: 0;
+  left: 0;
+  width: 5px;
+  height: 50px;
+  background: linear-gradient(135deg, orange, magenta, purple);
+  border-bottom-left-radius: 5px;
+}
+
+/* ── Bottom-Right ── */
+.bottom-right {
+  bottom: 0;
+  right: 0;
+}
+.bottom-right::before {
+  /* horizontal bar (reversed) */
+  bottom: 0;
+  right: 0;
+  width: 100px;
+  height: 5px;
+  background: linear-gradient(225deg, orange, magenta, purple);
+  border-bottom-right-radius: 5px;
+}
+.bottom-right::after {
+  /* vertical bar (upwards) */
+  bottom: 0;
+  right: 0;
+  width: 5px;
+  height: 100px;
+  background: linear-gradient(315deg, orange, magenta, purple);
+  border-bottom-right-radius: 5px;
+}
+.myContact {
+  padding: 20px;
+}
+
+.heading {
+  font-size: 1.4em;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.myContact {
+  padding: 20px;
+}
+
+.heading {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.contactItem {
+  display: flex;
+  align-items: center; /* Align items vertically centered */
+  margin-bottom: 5px; /* Space between each contact item */
+}
+
+.contactItem img.icon {
+  width: 20px; /* Adjust image size */
+  height: 20px; /* Adjust image size */
+  margin-right: 10px; /* Space between the image and the text */
+}
+
+.contactItem a {
+  font-size: 0.9em;
+  color: #4b0082d4;
+  text-decoration: none;
+  text-decoration: underline;
+}
+
+.contactItem a:hover {
+  color: #007bff; /* Hover color for links */
+}
+
+.rightContent {
+  width: 500px;
+  background: aliceblue;
+  background-image: linear-gradient(120deg, #fdfbfb 0%, #fdfdfd 200%);
+  border-radius: 10px;
+}
