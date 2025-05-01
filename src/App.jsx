@@ -9,7 +9,7 @@ import About from './components/Pages/About/About'
 const App = () => {
   return (
     <>
-    <div className='pageAnimation'>
+    {/* <div className='pageAnimation'> */}
 
 
     <BrowserRouter>
@@ -21,7 +21,7 @@ const App = () => {
     </Routes>
     </BrowserRouter>
     
-    </div>
+    {/* </div> */}
     </>
 
   )

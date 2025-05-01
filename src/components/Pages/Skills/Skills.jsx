@@ -3,6 +3,8 @@ import NavBar from "../../Common/NavBar";
 import "./Skills.css";
 
 const Skills = () => {
+  document.title = "Portfolio | Skills"
+
   return (
     <>
       <NavBar />
@@ -18,35 +20,35 @@ const Skills = () => {
 
               {/* first row: HTML5, CSS3, JavaScript */}
               <div className="firstRow skillsRow">
-                <div>HTML5</div>
-                <div>CSS3</div>
-                <div>JavaScript</div>
+                <div className="skills">HTML5</div>
+                <div className="skills">CSS3</div>
+                <div className="skills">JavaScript</div>
               </div>
 
               {/* second row: React, Tailwind */}
               <div className="secondRow skillsRow">
-                <div>React.js (JavaScript library)</div>
-                <div>Tailwind (CSS Framework)</div>
+                <div className="skills">React.js (JavaScript library)</div>
+                <div className="skills">Tailwind (CSS Framework)</div>
               </div>
             </div>
 
             <div className="backend backgroundGradient">
               <h2 className="headingss"><span className="borderLeft"></span>Back-End and Databases</h2>
               <div className="firstRow skillsRow">
-                <div>MYSQL</div>
-                <div>PHP</div>
-                <div>Nodejs</div>
+                <div className="skills">MYSQL</div>
+                <div className="skills" >PHP</div>
+                <div className="skills">Nodejs</div>
               </div>
 
-              <div className="secondRow skillsRow">
-                <div>Mongo DB</div>
-                <div>Express</div>
+              <div className="secondRowBackend skillsRow">
+                <div className="skills">Mongo DB</div>
+                <div className="skills">Express</div>
               </div>
             </div>
             <div className="developerTools backgroundGradient">
               <h2 className="headingss"><span className="borderLeft"></span>Developer Tools</h2>
               <div className="firstRow skillsRow">
-                <div>Visual Studio</div>
+                <div className="skills">Visual Studio</div>
               </div>
             </div>
           </div>
@@ -54,9 +56,9 @@ const Skills = () => {
             <div className="softSKills backgroundGradient">
               <h2 className="headingss"><span className="borderLeft"></span>Soft Skills</h2>
               <div className="firstRow skillsRow">
-                <div>Team Player</div>
-                <div>Active listener</div>
-                <div>Hard worker</div>
+                <div className="skills">Team Player</div>
+                <div className="skills">Active listener</div>
+                <div className="skills">Hard worker</div>
               </div>
             </div>
             <div className="technicalSKills backgroundGradient">
@@ -64,7 +66,7 @@ const Skills = () => {
                 <span className="borderLeft"></span>Technical Skills
               </h2>
               <div className="firstRow skillsRow">
-                <div>Proficient knowledge of Scrum and Agile methodologies</div>
+                <div className="skills">Proficient knowledge of Scrum and Agile methodologies</div>
               </div>
             </div>
           </div>

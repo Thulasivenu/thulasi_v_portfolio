@@ -1,80 +1,124 @@
-.projectContainer {
-  padding: 0px 10px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  animation: fadeInCenter 0.5s ease forwards;
+/* =============== Base Styles =============== */
 
+.projectContainer {
+  margin-top: 65px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   max-width: 1200px;
-  /* border: 1px solid red; */
-  max-width: none; /* override any earlier max-width */
-  margin: 0; /* flush to edges (or use auto for centering if parent is narrower) */
-  padding: 2rem; /* optional breathing room */
+  padding: 2rem 1rem;
   box-sizing: border-box;
-}
-
-
-@keyframes fadeInCenter {
-    from {
-      opacity: 0;
-      transform: translate(-50%, -50%) translateY(-20px);
-    }
-    to {
-      opacity: 1;
-      transform: translate(-50%, -50%) translateY(0);
-    }
-  }
-
-.projectsContent {
-  /* display: flex; */
-  display: grid;
-  width: 100%; /* ensure grid spans full .projects width */
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-}
-
-.techUsedProject {
-  display: flex;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .projectInfo {
-  background-image: linear-gradient(120deg, #fdfbfb 0%, #fdfdfd 200%);
+  margin: 0.5em auto;
+  padding: 1em;
+  width: 100%;
+  max-width: 600px;
+  background-color: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+}
+
+.projectInfo:nth-child(1) { animation-delay: 0s; }
+.projectInfo:nth-child(2) { animation-delay: 0.5s; }
+.projectInfo:nth-child(3) { animation-delay: 1s; }
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.projectInfo ul {
+  margin: 0.5em 0 0 1em;
+  padding: 0;
+  list-style-type: disc;
 }
 
 .projectInfo ul li {
-  /* background-color: red; */
-  line-height: 1.5rem;
+  line-height: 1.5;
+}
+
+/* Tech-tag styling */
+.techUsedProject {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 0.5em;
 }
 
 .techUsedProject p {
-  position: relative;
-  padding: 0.2rem 0.5rem;
-  margin: 0rem 0.5rem 0rem 0rem;
+  margin: 0 0.5rem 0.5rem 0;
+  padding: 0.2rem 0.6rem;
   font-size: 0.9em;
   color: #8b008b;
-  border: 1.5px solid transparent; /* transparent border */
-  border-radius: 25px;
-  background: linear-gradient(white, white) padding-box,
-    /* white inside */ linear-gradient(45deg, orange, magenta, purple)
-      border-box; /* colorful border */
-  text-align: center;
-  white-space: nowrap;
   font-weight: 500;
+  white-space: nowrap;
+  border: 1.5px solid transparent;
+  border-radius: 25px;
+  background: 
+    linear-gradient(white, white) padding-box,
+    linear-gradient(45deg, orange, magenta, purple) border-box;
+  text-align: center;
 }
 
-.headings {
-  font-weight: bold;
-  color: #333333;
-  font-size: 1.2em;
-  padding: 0rem 0.5rem;
-  /* margin: 0.5rem; */
-  /* border-radius: 25px; */
-  /* background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%); */
+@media (max-width: 600px) { 
+  .projectContainer {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    width: 90%;
+    padding: 1.5rem 0.5rem;
+    /* background-color: #8b008b; */
+    margin-left: auto; /* Ensure centering works */
+    margin-right: auto; /* Ensure centering works */
+  }
+  
+  .projectInfo {
+    padding: 0.8em;
+    width: 100%; /* Make sure it takes full width of its container */
+    max-width: 600px; /* Keep a max-width for larger devices */
+    margin: 0 auto; /* Centers the projectInfo */
+  }
+  
+  .techUsedProject p {
+    margin: 0.2rem 0.4rem 0.4rem 0;
+    font-size: 0.85em;
+  }
+}
 
-  /* background: 
-      linear-gradient(white, white) padding-box,  /* inner background (white) */
-  /* linear-gradient(45deg, orange, magenta, purple) border-box; border gradient */
-  border-left: 4px solid transparent; /* important: border itself is transparent */
+
+/* Tablets (601px–768px) */
+@media (min-width: 601px) and (max-width: 768px) {
+  .projectContainer {
+    width: 90%;
+  }
+  
+  .projectInfo {
+    max-width: 90%;
+  }
+}
+
+/* Desktops (≥769px) */
+@media (min-width: 769px) {
+  .projectContainer {
+    width: 100%;
+  }
+}
+
+
+@media (max-width: 600px) { 
+  
+
 }

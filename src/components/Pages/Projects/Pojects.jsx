@@ -3,17 +3,32 @@ import NavBar from "../../Common/NavBar";
 import "./Projects.css";
 
 const Project = () => {
+  document.title = "Portfolio | Project"
+
+  const scrollToProject = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({
+        behavior: "smooth",
+        block: "center", // <-- THIS will center it vertically
+      });
+    }
+  };
+
   return (
     <>
       <NavBar />
       <div className="projectContainer">
+       
         {/* <span className="corner top-left"></span> */}
         {/* <span className="corner top-right"></span> */}
         {/* <span className="corner bottom-left"></span> */}
         {/* <span className="corner bottom-right"></span> */}
         <div className="projectsContent">
-          <div className="projectInfo">
-            <p className="headingss"><span className="borderLeft"></span>HR BOT</p>
+          <div className="projectInfo backgroundGradient" id="hrbot">
+            <p className="headingss">
+              <span className="borderLeft"></span>HR BOT
+            </p>
             <div className="techUsedProject">
               <p>React.js</p>
               <p>Node.js</p>
@@ -43,8 +58,10 @@ const Project = () => {
               </li>
             </ul>
           </div>
-          <div className="projectInfo">
-            <p className="headingss"><span className="borderLeft"></span>NUS TTS</p>
+          <div className="projectInfo backgroundGradient" id="nustts">
+            <p className="headingss">
+              <span className="borderLeft"></span>NUS TTS
+            </p>
             <div className="techUsedProject">
               <p>HTML5</p>
               <p>CSS3</p>
@@ -85,8 +102,10 @@ const Project = () => {
               </li>
             </ul>
           </div>
-          <div className="projectInfo">
-            <p className="headingss"><span className="borderLeft"></span>UPMA</p>
+          <div className="projectInfo backgroundGradient" id="upma">
+            <p className="headingss">
+              <span className="borderLeft"></span>UPMA
+            </p>
             <div className="techUsedProject">
               <p>HTML5</p>
               <p>CSS3</p>

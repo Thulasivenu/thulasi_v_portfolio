@@ -1,35 +1,62 @@
-.navContainer {
+/* .navContainer {
   display: flex;
   justify-content: space-between;
-  /* box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px; */
-  /* border: 2px solid red; */
+
   align-items: center;
   position: fixed;
   top: 0;
   width: 100%;
-  /* padding: 10px 20px; */
   left: 0;
   z-index: 1000;
   height: 65px;
   background-image: linear-gradient(120deg, #fdfbfb 0%, #fdfdfd 200%);
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-}
+} */
 
 .navLinks {
-  padding: 2em;
+  /* border: 1px solid red; */
+  color: white;
+  /* padding: 1rem; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* position: relative; */
 }
-.navLinks ul {
+
+.mainHeader {
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  left: 0;
+  z-index: 1000;
+  height: 65px;
+  background-image: linear-gradient(120deg, #fdfbfb 0%, #fdfdfd 200%);
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+  /* border: 1px solid green; */
+}
+
+.links {
   display: flex;
   gap: 1rem;
   padding: 0 2em;
   margin: 0;
+  align-content: center;
+  align-items: center;
+}
+
+.modalPopup {
+  display: none;
 }
 
 .navLinks li {
   list-style: none;
 }
 
-.navLinks a {
+.links a {
   position: relative;
   text-decoration: none;
   font-size: 1em;
@@ -41,7 +68,7 @@
 }
 
 /* 🔧 Give ::after a transition on width only */
-.navLinks a::after {
+.links a::after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -59,20 +86,20 @@
   );
 }
 
-.navLinks a:hover::after {
+.links a:hover::after {
   width: 100%;
   transition: width 0.3s ease;
 }
 
 /* Active link: keep it fully underlined */
-.navLinks a.active::after {
+.links a.active::after {
   width: 100%;
 }
 
 /* optional: change text color when active/hovered */
 
 .myProfile {
-  padding: 2em;
+  padding: 1em;
 }
 
 .myProfile .profileIcon {
@@ -88,78 +115,113 @@
   font-size: 1.2em;
   font-weight: 600;
   text-transform: uppercase;
-  color: #8B008B;
+  color: #8b008b;
 }
 
 .hamBurger {
   display: none;
-  background: none; border: none;
+  background: none;
+  border: none;
   cursor: pointer;
+  /* border: 2px solid red; */
+  z-index: 1001; /* Ensure it's above the nav menu */
 }
 
-.modalPopup{
-  display: none;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);  /* Dark overlay */
-  z-index: 999;  /* Overlay is beneath the content */
-}
+/* Media query for smaller screens */
 
+@media screen and (max-width: 768px) {
 
-
-
-
-
-.modalPopup .modalContent {
-  position: relative;
-  background-color: white;
-  padding: 20px;
-  margin: auto;
-  width: 50%;
-  max-width: 400px;
-  border-radius: 8px;
-  z-index: 1000;
-}
-
-.modalPopup.open {
-  display: block; /* Show modal */
-}
-
-/* responsive design */
-@media (max-width: 768px) {
-  .hamBurger {
-    display: block;  /* show hamburger */
+  .links{
+    display: none;
   }
-  .navLinks {
+
+
+  .mobileView {
+    text-transform: uppercase;
+    text-align: center;
     position: absolute;
-    top: 65px;  /* just below the navbar */
-    right: 0;
-    background: #fff;
-    width: 200px;
-    transform: translateX(100%);  /* hide off-screen */
-    transition: transform 0.3s ease;
-  }
-  .navLinks.open {
-    transform: translateX(0);  /* slide in */
-  }
-  .navLinks ul {
+    top: 0%;
+    right: 0%;
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    padding: 0.5em 1em;
+    margin: 0;
     flex-direction: column;
-    padding: 1rem 0;
-  }
-  .navLinks li {
-    margin: 0.5rem 1rem;
-  }
-  .hamBurger img {
-    width: 30px;
-    height: auto;
+    width: 100%;
+    background-color: white;
+    align-items: end;
   }
 
-  .profileName {
+  .hamburgerBtn {
+    margin-right: 1rem;
+  }
+
+  .mobileView li {
+    padding: 0 0.2rem 0.2rem 0.2rem;
+  }
+
+  .mobileView li a {
+    color: #333;
+    position: relative;
+    display: inline-block;
+    padding: 4px;
+    font-weight: 500;
+  }
+
+  .mobileView a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient( 90deg, orange, magenta, purple, orange, magenta, purple );
+  }
+  .mobileView a:hover::after {
+    width: 100%;
+    transition: width 0.3s ease;
+  }
+  
+  /* Active link: keep it fully underlined */
+  .mobileView a.active::after {
+    width: 100%;
+  }
+
+  .navLinks li {
+    padding: 0.5rem 0;
+  }
+
+  .hamBurger {
+    display: block;
+  }
+
+  /* .links.open {
+    display: flex;
+    background: white;
+  } */
+
+  .modalPopup.open {
+    position: fixed;
+    transition: opacity 0.3s ease;
+
+    left: 0;
+    z-index: 1000;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top:13%;
+    transition: width 0.3s ease;
+    transform: translateY(-20px);
+    /* opacity: 0; */
+    transition: all 0.3s ease;
+
+  }
+
+  .profileName{
     display: none;
   }
 }
-
-

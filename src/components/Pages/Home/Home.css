@@ -1,58 +1,66 @@
 .homeContainer {
-  width: 80%;
-  max-width: 800px;
-  /* border: 1px solid black; */
-  padding: 60px 30px;
+  width: 90%; /* 90% of screen width */
+  max-width: 800px; /* Limit max width */
+  padding: 3rem 2rem; /* Reduced horizontal padding for small screens */
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   animation: fadeInCenter 0.5s ease forwards;
-
+  border-radius: 12px; /* Optional: rounded corners */
+  box-sizing: border-box;
+}
+.skillsContainer{
+  
+}
+@keyframes fadeInCenter {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) translateY(0);
+  }
+}
+.fadeInUp {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease-out forwards;
 }
 
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
-@keyframes fadeInCenter {
-    from {
-      opacity: 0;
-      transform: translate(-50%, -50%) translateY(-20px);
-    }
-    to {
-      opacity: 1;
-      transform: translate(-50%, -50%) translateY(0);
-    }
-  }
-  .fadeInUp {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 0.8s ease-out forwards;
-  }
-  
-  @keyframes fadeInUp {
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  .gradientText {
-    background: linear-gradient(90deg, orange, magenta, purple);
-    background-size: 200% 200%;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: gradientShift 3s ease infinite;
-  }
-  
-  @keyframes gradientShift {
-    0%   { background-position: 0% 50%; }
-    50%  { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-  }
-  
+.gradientText {
+  background: linear-gradient(90deg, orange, magenta, purple);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientShift 3s ease infinite;
+  font-size: 2.5em;
+  font-weight: bold;
+}
 
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
 
 .welcome {
-  font-size: 4vw; /* Adjusts dynamically with screen size */
+  font-size: 1.5em; /* Adjusts dynamically with screen size */
+  font-weight: 600;
 }
 
 .objective {
@@ -167,7 +175,10 @@
   border-bottom-right-radius: 5px;
 }
 .myContact {
-  padding: 20px;
+  display: flex;
+  gap: 2.5rem;
+  flex-direction: row;
+  
 }
 
 .heading {
@@ -176,37 +187,54 @@
   margin-bottom: 20px;
 }
 
-.myContact {
-  padding: 20px;
-}
-
 .heading {
   font-size: 1.2em;
   font-weight: bold;
   margin-bottom: 10px;
 }
 
-.contactItem {
-  display: flex;
-  align-items: center; /* Align items vertically centered */
-  margin-bottom: 5px; /* Space between each contact item */
+.contactItem,
+.contactItemLinkedin {
+  transition: transform 0.3s ease-out, filter 0.3s ease;
 }
 
 .contactItem img.icon {
   width: 20px; /* Adjust image size */
   height: 20px; /* Adjust image size */
-  margin-right: 10px; /* Space between the image and the text */
+  margin-right: 0.35em;
 }
 
+.contactItemLinkedin img.iconLinkedIn {
+  width: 16px; /* Adjust image size */
+  height: 16px; /* Adjust image size */
+  margin-right: 0.35em;
+}
+
+/* .contactItem img.icon,
+.contactItemLinkedin img.iconLinkedIn {
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.contactItem a img.icon:hover,
+.contactItemLinkedin  a img.iconLinkedIn:hover {
+  transform: scale(1.2);
+  filter: brightness(1.2);
+} */
+
+.contactItemLinkedin:hover,
+.contactItem:hover {
+  transform: scale(1.1);
+  /* filter: brightness(1.2); */
+}
 .contactItem a {
   font-size: 0.9em;
   color: #4b0082d4;
   text-decoration: none;
-  text-decoration: underline;
+  /* text-decoration: underline; */
 }
 
 .contactItem a:hover {
-  color: #007bff; /* Hover color for links */
+  color: #4b0082d4;
 }
 
 .rightContent {
@@ -214,4 +242,128 @@
   background: aliceblue;
   background-image: linear-gradient(120deg, #fdfbfb 0%, #fdfdfd 200%);
   border-radius: 10px;
+  margin-top: 2rem;
+}
+
+.contactItem a,
+.contactItemLinkedin a {
+  padding: 0.3rem 1rem;
+  background: #f5f5f5;
+  border-radius: 0.25rem;
+  text-align: center;
+  margin: 0.5rem 0rem;
+  position: relative;
+  font-size: 1em;
+  color: #8b008b;
+  border: 1.5px solid transparent;
+  border-radius: 25px;
+  background: linear-gradient(white, white) padding-box,
+    linear-gradient(45deg, orange, magenta, purple) border-box;
+  text-align: center;
+  white-space: nowrap;
+  width: 100px;
+  display: flex;
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .homeContainer {
+    width: 95%;
+    padding: 2rem 1rem;
+    margin: 1.5rem 0 0 0;
+  }
+
+  .welcome {
+    font-size: 1.2em;
+  }
+
+  .gradientText {
+    font-size: 2em;
+  }
+
+  .objective {
+    font-size: 0.95rem;
+    line-height: 1.4rem;
+  }
+
+  .rightContent {
+    width: 100%;
+    margin-top: 1.5rem;
+  }
+  .myContact {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 0.5rem;
+    /* background-color: aqua; */
+  }
+
+  .projectInfo {
+    padding: 0.8em;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .techUsedProject p {
+    margin: 0.2rem 0.4rem 0.4rem 0;
+    font-size: 0.85em;
+  }
+
+  .top-left::after {
+    width: 3px;
+    height: 60px;
+  }
+  .top-left::before {
+    width: 60px;
+    height: 3px;
+  }
+
+  .bottom-right::before {
+    width: 60px;
+    height: 3px;
+  }
+  .bottom-right::after {
+    width: 3px;
+    height: 60px;
+  }
+}
+
+@media (max-width: 420px) {
+  .homeContainer {
+    width: 80%;
+    padding: 2rem 1rem;
+    /* background-color: #8b008b ; */
+    margin: 2.2rem 0rem 0rem 0rem;
+  }
+  .gradientText {
+    font-size: 1.8rem;
+  }
+
+  .contactItem a {
+    margin: 0.4rem 0rem;
+  }
+
+  .objective {
+    border-left: 3px solid gray;
+  }
+}
+@media (max-width: 380px) {
+  .homeContainer {
+    /* width: 80%; */
+    padding: 1rem 1rem;
+    /* background-color: lightblue ; */
+    /* margin: 2.2rem 0rem 0rem 0rem; */
+  }
+  .gradientText {
+    font-size: 1.4rem;
+  }
+  .welcome {
+    font-size: 1em;
+  }
+
+  .heading {
+    font-size: 0.9rem;
+  }
 }
