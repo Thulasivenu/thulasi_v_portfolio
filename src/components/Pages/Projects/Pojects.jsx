@@ -19,6 +19,7 @@ const Project = () => {
     <>
       <NavBar />
       <div className="projectContainer">
+        <h1 className="titleForMobileView">Projects</h1>
        
         {/* <span className="corner top-left"></span> */}
         {/* <span className="corner top-right"></span> */}

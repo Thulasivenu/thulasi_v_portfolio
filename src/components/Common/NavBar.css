@@ -1,21 +1,7 @@
-/* .navContainer {
-  display: flex;
-  justify-content: space-between;
 
-  align-items: center;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  left: 0;
-  z-index: 1000;
-  height: 65px;
-  background-image: linear-gradient(120deg, #fdfbfb 0%, #fdfdfd 200%);
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-} */
 
 .navLinks {
-  /* border: 1px solid red; */
-  color: white;
+  /* color: white; */
   /* padding: 1rem; */
   display: flex;
   justify-content: space-between;
@@ -67,7 +53,6 @@
   transition: color 0.2s;
 }
 
-/* 🔧 Give ::after a transition on width only */
 .links a::after {
   content: "";
   position: absolute;
@@ -153,6 +138,8 @@
     align-items: end;
   }
 
+  
+
   .hamburgerBtn {
     margin-right: 1rem;
   }
@@ -195,15 +182,30 @@
   .hamBurger {
     display: block;
   }
-
-  /* .links.open {
+  .modalPopup {
     display: flex;
-    background: white;
-  } */
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    left: 0;
+    top: 13%;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+
+    /* Start hidden */
+    opacity: 0;
+    transform: translateY(-20px);
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+
 
   .modalPopup.open {
     position: fixed;
-    transition: opacity 0.3s ease;
+    /* transition: opacity 0.3s ease; */
 
     left: 0;
     z-index: 1000;
@@ -218,7 +220,17 @@
     transform: translateY(-20px);
     /* opacity: 0; */
     transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(-20px);
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
 
+  }
+
+  .modalPopup.open {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
   }
 
   .profileName{

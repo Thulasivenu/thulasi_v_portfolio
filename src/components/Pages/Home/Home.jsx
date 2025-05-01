@@ -10,7 +10,9 @@ const Home = () => {
   return (
     <>
       <NavBar />
+ 
       <div className="homeContainer">
+        {/* <h1>Home</h1> */}
         <span className="corner top-left"></span>
 
         <span className="corner bottom-right"></span>

@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import "./NavBar.css";
 import hamburgerIcon from "../../assets/images/hamBurger.svg";
+import closeIcon from "../../assets/images/closeIcon.svg";
 
 const NavBar = () => {
   const [open, setOpen] = useState(false);
@@ -63,8 +64,9 @@ const NavBar = () => {
                 setOpen(!open);
               }}
             >
-              <img src={hamburgerIcon} alt="Menu" style={{ width: "30px" }} />
-            </button>
+              {/* <img src={hamburgerIcon} alt="Menu" style={{ width: "30px" }} /> */}
+              <img src={open ? closeIcon : hamburgerIcon} alt="Menu" style={{ width: "30px" }} />
+              </button>
           </div>
           {/* <div className={`${open && "modalPopup"}`}></div> */}
 

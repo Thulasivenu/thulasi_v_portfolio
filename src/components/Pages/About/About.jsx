@@ -8,6 +8,9 @@ const About = () => {
   return (
     <>
       <NavBar />
+      <main className="contentStarts">
+        <h1 className="titleForMobileView">About</h1>
+       
       <div className="aboutConatiner">
         {/* <span className="corner top-left"></span> */}
         {/* <span className="corner top-right"></span> */}
@@ -53,6 +56,8 @@ const About = () => {
           </div>
         </div>
       </div>
+      </main>
+    
     </>
   );
 };

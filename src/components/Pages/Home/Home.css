@@ -10,9 +10,8 @@
   border-radius: 12px; /* Optional: rounded corners */
   box-sizing: border-box;
 }
-.skillsContainer{
-  
-}
+
+
 @keyframes fadeInCenter {
   from {
     opacity: 0;

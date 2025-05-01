@@ -31,3 +31,28 @@ a {
   gap: 0.8rem;
     margin:0.5rem 0rem;
 }
+/* Style for the <p> element with a bottom gradient border */
+.titleForMobileView {
+  /* position: relative; Set position to relative for the pseudo-element to work */
+  font-size: 1.5rem;
+  font-weight: 600;
+  /* text-transform: uppercase; */
+  color: purple;
+  /* border-bottom: 2px solid purple; */
+  /* display: inline; */
+  display: none;
+  text-align: center;
+    text-decoration: underline;
+}
+@media (max-width: 768px) {
+
+.titleForMobileView{
+  display: block;
+  text-align: center;
+  text-decoration: underline;
+}
+}
+
+
+
+
